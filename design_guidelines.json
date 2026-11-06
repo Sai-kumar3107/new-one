@@ -1,0 +1,158 @@
+{
+  "app_name": "RCortexa",
+  "personality": "6 Glass / Luxe DARK with 7 Dark-First Utility layout for data density",
+  "personality_one_liner": "Premium fintech-level polish delivering high-contrast, data-dense CRM utility within a luxurious, dark-themed visual environment.",
+  "color": {
+    "surface": "#0B0B0D",
+    "onSurface": "#FFFFFF",
+    "surfaceSecondary": "#17181C",
+    "onSurfaceSecondary": "#FFFFFF",
+    "surfaceTertiary": "#252831",
+    "onSurfaceTertiary": "#F6F7F9",
+    "surfaceInverse": "#FFFFFF",
+    "onSurfaceInverse": "#0B0B0D",
+    "muted": "#8B909B",
+    "brand": "#315CFF",
+    "onBrand": "#FFFFFF",
+    "brandPrimary": "#315CFF",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#6C8CFF",
+    "onBrandSecondary": "#0B0B0D",
+    "brandTertiary": "#FF7A1A",
+    "onBrandTertiary": "#FFFFFF",
+    "success": "#10B981",
+    "onSuccess": "#FFFFFF",
+    "warning": "#F59E0B",
+    "onWarning": "#0B0B0D",
+    "error": "#EF4444",
+    "onError": "#FFFFFF",
+    "info": "#8B909B",
+    "onInfo": "#FFFFFF",
+    "border": "#252831",
+    "borderStrong": "#E5E7EB",
+    "divider": "#17181C"
+  },
+  "typography": {
+    "displayFontFamily": "SpaceGrotesk-Medium",
+    "textFontFamily": "PlusJakartaSans-Regular",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous outer padding to frame the app like a premium display, but compact spacing inside inventory cards/grids to maximize CRM data density.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": 0,
+  "navigation": "bottom_tabs",
+  "icon_set": "Phosphor",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Use blur on bottom tab bar, floating actions, sticky headers, and hero card overlays placed on top of property images.",
+      "Ensure a >75% opacity dark tint under the blur to maintain AAA readability for CRM data."
+    ],
+    "dont's": [
+      "Do not blur dense inventory grid cells or form inputs.",
+      "Do not use glassmorphism on standard body content."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Dashboard",
+      "purpose": "High-level KPI overview (leads, bookings, revenue) acting as a command center for the active role.",
+      "states": {
+        "loading": "Skeleton UI over surfaceSecondary metric blocks.",
+        "empty": "AI-generated illustration of a sleek abstract structure, with a prompt to add the first lead.",
+        "error": "Muted error message with a 'Retry Sync' primary CTA."
+      },
+      "layout": "Top section for role/profile switch. Middle section composed of bold metric cards (using brand accent colors minimally) arranged in a 2-column grid. Bottom section for 'Recent Activities' timeline."
+    },
+    {
+      "name": "Leads Pipeline",
+      "purpose": "Kanban-style board and timeline view tracking lead progression from New to Closed.",
+      "states": {
+        "loading": "Skeleton cards cascading down the pipeline columns.",
+        "empty": "Illustration of an empty calendar/board. Text: 'No leads in this stage yet.'",
+        "error": "Text stating 'Could not load leads' with a reload button."
+      },
+      "layout": "Sticky horizontal scroll at the top for pipeline stages. Below, a vertical scrolling list of compact lead cards showing name, AI score badge, and quick-action icon."
+    },
+    {
+      "name": "Inventory Grid",
+      "purpose": "A dense, highly visual matrix of property units reflecting their current booking status.",
+      "states": {
+        "loading": "Grid of surfaceTertiary skeleton squares flashing softly.",
+        "empty": "Icon of an empty building grid with 'No units match your filter.'",
+        "error": "Error loading inventory map."
+      },
+      "layout": "Top sticky header with filter chips (N/S/E/W, Floor, Tower). The core is a responsive multi-column grid (3-col or 4-col depending on size) where each cell uses a status-colored dot (success=available, warning=reserved, error=sold, info=blocked) over a dark surfaceSecondary card."
+    },
+    {
+      "name": "AI CRM Assistant",
+      "purpose": "Chat interface powered by Claude for instant property recommendations and lead scoring explanations.",
+      "states": {
+        "loading": "Pulsing brand logo indicating AI is 'thinking'.",
+        "empty": "Greeting message with suggested prompt chips (e.g., 'Analyze lead X').",
+        "error": "Message bubble failing to send with a red exclamation."
+      },
+      "layout": "Full screen chat flow. User messages in surfaceTertiary bubbles, AI messages in surfaceSecondary bubbles. Input field sticky at bottom above keyboard."
+    }
+  ],
+  "images": {
+    "hero_property_exterior": {
+      "url": "https://images.pexels.com/photos/34533543/pexels-photo-34533543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Tall modern luxury real estate apartment building with a dark, dramatic backdrop."
+    },
+    "hero_property_interior": {
+      "url": "https://images.unsplash.com/photo-1640357897497-599b4fc84f51?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBpbnRlcmlvciUyMHByZW1pdW0lMjBkYXJrfGVufDB8fHx8MTc5Mjc0MzUwM3ww&ixlib=rb-4.1.0&q=85",
+      "alt": "A sleek and modern apartment living room interior featuring dark cabinetry and premium ambient lighting."
+    }
+  },
+  "haptics": {
+    "events": {
+      "primary_action": "impactLight",
+      "tab_change": "selection",
+      "unit_selection": "impactMedium",
+      "status_change": "notificationSuccess",
+      "error": "notificationError"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dark theme mapping provided. Do not use generic whites or blues, rely solely on the hex codes extracted from the problem statement.",
+    "Inventory status colors (success=Green, warning=Yellow, error=Red, info=Grey) must strictly align with the exact use cases: Available, Reserved, Sold/Booked, Blocked.",
+    "Typography requires 'SpaceGrotesk-Medium' for headings to enforce the fintech-level, high-contrast, editorial feel.",
+    "Implement the Inventory grid as a highly visual, responsive 3 or 4-column matrix with dense information layout.",
+    "Use skeleton loaders for data screens (dashboard, inventory, leads) and avoid spinning loaders.",
+    "Always apply a gradient-to-dark scrim layer when rendering text over the luxury property images to guarantee readability.",
+    "Ensure 'brandTertiary' (Premium Orange #FF7A1A) is used extremely sparingly, only for premium accents or critical AI-driven insights."
+  ]
+}

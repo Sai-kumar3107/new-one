@@ -1,0 +1,12 @@
+**/.env
+**/.env.*
+**/__pycache__/
+**/node_modules/
+frontend/.expo/
+frontend/.metro-cache/
+memory/
+test_reports/
+backend/tests/
+.emergent/
+frontend/dist/
+tests/
